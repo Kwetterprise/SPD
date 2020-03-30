@@ -1,0 +1,15 @@
+@startuml "Profile page"
+
+salt
+{
+
+{S
+    Search
+    . . . . . .
+    .
+    .
+}
+
+}
+
+@enduml

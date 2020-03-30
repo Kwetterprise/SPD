@@ -1,0 +1,43 @@
+\documentclass[a4paper,english]{tvde/tvde}
+
+% information to generate title page and basic document
+\title{SPD\titlepagebreak{}of\titlepagebreak{}Kwetter} % use \titlepagebreak{} to represent a newline on the title page, but a space in the footer.
+\subtitle{} % leave empty to hide the field
+\author{Tim van den Essen}
+\documentstatus{Concept} % Leave empty to hide the field.
+\releasedate{\tedate\today}
+\studentnumber{3118525} % leave empty to hide the field
+\coursename{S6} % leave empty to hide the field
+%\titlepagegraphic{} % leave empty to hide the image
+
+\begin{document}
+\maketitle{}
+%%%%%%%%%%%%%%%%%%%%%%%%%\makedisclaimer{}
+
+\begin{tedocumenthistoryS}
+    \tedocumenthistoryrowS{xxxx-xx-xx}{Concept}{First version}% chktex 8
+\end{tedocumenthistoryS}
+
+\begin{tedistributionlist}{c}{R01}
+    \tetablerow{Tim van den Essen & A }
+    \tetablerow{Person X & X }
+\end{tedistributionlist}
+
+\tedocumentStar{} % use \tedocument{} for a regular section
+
+% % in a real document replace the 1.1 by a real references to
+% % a section using \ref{<section label>}
+% \begin{teissues}
+%     \teissue{1.}{1.1}{<issue in section 1.1>}{<username>}{yyyy-mm-dd}
+%     \teissue{2.}{2.1}{<issue in section 3.1>}{<username>}{yyyy-mm-dd}
+% \end{teissues}
+
+\tetableofcontents{}
+\telistoffigures{}
+\telistoftables{}
+\telistoflistings{}
+
+\include{contents/introduction}
+\include{contents/mockups}
+
+\end{document}
