@@ -1,0 +1,3 @@
+[submodule "tvde"]
+	path = tvde
+	url = git@github.com:Tvde1/tvde-latex-template.git
