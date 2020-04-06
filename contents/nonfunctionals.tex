@@ -1,0 +1,26 @@
+\chapter{Non-functional Requirements}
+
+\tereqshowid%
+\tereqshowicon%
+
+\section{API gateway}
+
+\begin{tereqdef}{NF_API_1}
+    All traffic must go trough an API gateway.
+\end{tereqdef}
+
+\begin{tereqdef}{NF_API_2}
+    Requests through the API gateway cannot take longer than \TBD{200 ms}.
+\end{tereqdef}
+
+\section{Tweets}
+
+\begin{tereqdef}{NF_TWEET_1}
+    Tweets must be loaded within \TBD{8 seconds}.
+\end{tereqdef}
+
+\section{Notifications}
+
+\begin{tereqdef}{NF_NOTIFICATION_1}
+    When a user is mentioned, an email notification must be delivered within \TBD{1 minute}.
+\end{tereqdef}

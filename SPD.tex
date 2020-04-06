@@ -1,7 +1,7 @@
 \documentclass[a4paper,english]{tvde/tvde}
 
 % information to generate title page and basic document
-\title{SPD\titlepagebreak{}of\titlepagebreak{}Kwetter} % use \titlepagebreak{} to represent a newline on the title page, but a space in the footer.
+\title{SPD\titlepagebreak{}of\titlepagebreak{}Kwetterprise} % use \titlepagebreak{} to represent a newline on the title page, but a space in the footer.
 \subtitle{} % leave empty to hide the field
 \author{Tim van den Essen}
 \documentstatus{Concept} % Leave empty to hide the field.
@@ -18,9 +18,12 @@
     \tedocumenthistoryrowS{xxxx-xx-xx}{Concept}{First version}% chktex 8
 \end{tedocumenthistoryS}
 
-\begin{tedistributionlist}{c}{R01}
-    \tetablerow{Tim van den Essen & A }
-    \tetablerow{Person X & X }
+\begin{tedistributionlist}{c*2{|c}}{R01 & R02 & R03}
+    \tetablerowspan{4}{l}{Kwetterprise}
+    \tetablerow{Tim van den Essen    & A &   & }
+    \tetablerowspan{4}{l}{Fontys}
+    \tetablerow{Erik van der Schriek & X &   &}
+    \tetablerow{Frank Coenen         & X &   &}
 \end{tedistributionlist}
 
 \tedocumentStar{} % use \tedocument{} for a regular section
@@ -38,6 +41,8 @@
 \telistoflistings{}
 
 \include{contents/introduction}
+\include{contents/rights}
 \include{contents/mockups}
+% \include{contents/nonfunctionals}
 
 \end{document}
