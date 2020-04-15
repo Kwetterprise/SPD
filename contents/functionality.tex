@@ -1,0 +1,81 @@
+\chapter{Requirements}\label{ch:requirements}
+This capter contains functional and non-functional requirements for Kwetterprise. Functional requirements describe what the system should do and non-functional requirements describe how the system works. \TBD{Note that this list is incomplete.}
+
+\tereqshowid%
+\tereqshowicon%
+
+\newcommand{\pri}[1]{\hfill{\fbox{#1}}}
+
+\section{Functional requirements}
+
+\subsection{Tweeting}
+
+\begin{tereqdef}{F_TWEET_POST}
+    A user can post a tweet.\pri{Must}
+\end{tereqdef}
+
+\begin{tereqdef}{F_TWEET_GET_FROM_USER}
+    The tweets from a user can be retrieved.\pri{Must}
+\end{tereqdef}
+
+\begin{tereqdef}{F_TWEET_REALTIME}
+    An overview of real-time most recent tweets can be viewed.\pri{Must}
+\end{tereqdef}
+
+\subsubsection{Replying}
+
+\begin{tereqdef}{F_REPLY}
+    A user can reply to an existing tweet.\pri{Could}
+\end{tereqdef}
+
+\subsection{Reacting}
+
+\begin{tereqdef}{F_REACT}
+    A user can react to a tweet.\pri{Should}
+\end{tereqdef}
+
+\begin{tereqdef}{F_REACT_SHOW}
+    A tweet shows the amount of reactions it has received.\pri{Should}
+\end{tereqdef}
+
+\subsection{Following}
+
+\begin{tereqdef}{F_FOLLOW}
+    A user can follow another user.\pri{Must}
+\end{tereqdef}
+
+\begin{tereqdef}{F_FOLLOW_DASH}
+    A user can view a dashboard with recent tweets by followed users.\pri{Must}
+\end{tereqdef}
+
+\subsection{Users \& roles}
+
+\begin{tereqdef}{F_REGISTER}
+    A user can register themselves through a register page.\pri{Must}
+\end{tereqdef}
+
+\begin{tereqdef}{F_LOGIN}
+    A user can log in.\pri{Must}
+\end{tereqdef}
+
+\begin{tereqdef}{F_LOGOUT}
+    A user can logout.\pri{Must}
+\end{tereqdef}
+
+\begin{tereqdef}{F_MODERATION_DELTWEET}
+    A moderator can remove tweets.\pri{Should}
+\end{tereqdef}
+
+\begin{tereqdef}{F_MODERATION_BAN}
+    A moderator can ban users.\pri{Should}
+\end{tereqdef}
+
+\begin{tereqdef}{F_ADMIN_ASSIGN_ROLES}
+    An administrator can change the role of a user.\pri{Should}
+\end{tereqdef}
+
+\section{Non-functional requirements}
+
+\begin{tereqdef}{APIG_REQ}
+    The API gateway must be able to handle 500 requests per minute.\pri{Should}
+\end{tereqdef}

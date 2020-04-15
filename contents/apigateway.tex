@@ -1,0 +1,51 @@
+\chapter{API Gateway}
+This chapter discusses the specifications of the API gateway.
+
+\section{Definitions}
+
+\begin{teitemize}
+    \item \textbf{Service}\\
+    A service refers to the definition of the API of a microservice. An example is ``\texttt{email-service}''. This shows that a service exists with that name.
+    \item \textbf{Service identifier}\\
+    Multiple instances of one service can exist. Each instance is identified by its own \teurl[GUID]{https://en.wikipedia.org/wiki/Universally\_unique\_identifier}. A generated GUID is practically unique.
+    \item \textbf{Endpoint}\\
+    The endpoint
+\end{teitemize}
+    
+    \section{Routing}
+Requests are made to \texttt{http://api-hostname/api/}\teunderline{\texttt{service-name}}\texttt{/}\teunderline{\texttt{endpoint}}.
+
+The API gateway re-routes this request to the approperiate server. If no server is running, a HTTP status code of 503 (Unavailable) is returned.
+
+Query parameters (such as \texttt{/endpoint?value=true}) and POST bodies are forwarded to the service as well.
+
+\section{Service discovery}
+\subsection{Service requirements}
+Certain requirements are put on services which register themselves at the API gateway.
+
+\begin{teenumerate}
+    \item \textbf{Registering}\\
+    A client registers themselves by sending a request POST to \texttt{\textbackslash{}register}. The POST request must contain the following body:
+    \begin{lstlisting}[style=teunknown]
+{
+    "ServiceName": "[The name of the service]",
+    "Guid": "[The generated GUID]",
+    "BaseUrl": "[The base url this service is reachable at]"
+}
+    \end{lstlisting}
+    It is OK---and even encouraged---to send duplicate register requests. This is useful when the API gateway has restarted (and lost its services) but the service is still running.
+    \item \textbf{Ping}\\
+    The service must have a \texttt{/status} endpoint which returns the status of the service. This status must be:
+    \begin{teitemize}
+        \item \texttt{200} when the service is running OK.
+        \item \texttt{504} when the service is (partly) not available due to issues.
+    \end{teitemize} 
+    If this endpoint is not reachable, the service is assumed to be irreparably crashed and is removed from the service discovery. The service must register itself again.
+    \item \textbf{Unregistering}\\
+    Unregistering is \teunderline{optional} but preferred. If the service stops without unregistering it will eventually be removed because \texttt{/status} is unreachable. A service can unregister itself by sending a POST request to \texttt{/unregister} with the following body:
+    \begin{lstlisting}[style=teunknown]
+{
+    "Guid": "[The GUID of this service]"
+}
+    \end{lstlisting} 
+\end{teenumerate}

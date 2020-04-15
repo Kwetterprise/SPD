@@ -4,9 +4,9 @@ Within Kwetterprise, three roles exist:
     \item \textbf{User}\\
     A user can post and read tweets.
     \item \textbf{Moderator}\\
-    A moderator can delete tweets and ban users. Moderators can also change the roles of other users to moderators
+    A moderator can delete tweets and ban users.
     \item \textbf{Administrator}\\
-    An administrator is a moderator with the additional right of demoting moderators and promoting users to administrator.
+    An administrator is a moderator with the additional right of changing user's roles.
 \end{teenumerate}
 
 When an account is created, the default role is ``User''. \Cref{tbl:rights} describes which actions can be performed by which roles.
@@ -22,7 +22,7 @@ When an account is created, the default role is ``User''. \Cref{tbl:rights} desc
         \tetablerow{React to a tweet       & X  & X & X }
         \tetablerow{Delete tweets          & X* & X & X }
         \tetablerow{Ban users              &    & X & X }
-        \tetablerow{Change role of user/moderator to user/moderator & & X & X }
+        \tetablerow{Change role of user/moderator to user/moderator & & & X }
         \tetablerow{Change role of user/moderator to administartor & & & X }
     \end{tetabular}
 \end{tetable}
