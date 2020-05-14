@@ -12,7 +12,7 @@ This chapter discusses the specifications of the API gateway.
     The endpoint
 \end{teitemize}
     
-    \section{Routing}
+\section{Routing}
 Requests are made to \texttt{http://api-hostname/api/}\teunderline{\texttt{service-name}}\texttt{/}\teunderline{\texttt{endpoint}}.
 
 The API gateway re-routes this request to the approperiate server. If no server is running, a HTTP status code of 503 (Unavailable) is returned.
@@ -28,9 +28,9 @@ Certain requirements are put on services which register themselves at the API ga
     A client registers themselves by sending a request POST to \texttt{\textbackslash{}register}. The POST request must contain the following body:
     \begin{lstlisting}[style=teunknown]
 {
-    "ServiceName": "[The name of the service]",
-    "Guid": "[The generated GUID]",
-    "BaseUrl": "[The base url this service is reachable at]"
+    "serviceName": "[The name of the service]",
+    "guid": "[The generated GUID]",
+    "baseUrl": "[The base url this service is reachable at]"
 }
     \end{lstlisting}
     It is OK---and even encouraged---to send duplicate register requests. This is useful when the API gateway has restarted (and lost its services) but the service is still running.
