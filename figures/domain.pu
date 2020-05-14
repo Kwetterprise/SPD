@@ -1,0 +1,37 @@
+@startuml "domain"
+hide empty members
+
+enum ReactionType {
+    Heart
+    ThumbsUp
+    ThumbsDown
+}
+
+class Reaction {
+
+}
+Reaction }o-left-|| ReactionType : Type
+
+class Tweet {
+    +string Body
+}
+Tweet ||--o{ Reaction : Reactions
+Tweet }o--|| Tweet : Parent
+
+enum Role {
+    Member
+    Moderator
+    Administrator
+}
+
+class User {
+    +string Nickname
+    +string Bio
+}
+User ||--o{ Tweet : Author
+User }o-left-|| Role : Role
+User }o--o{ User : Followers
+User ||--o{ Reaction : Author
+Tweet }o--o{ User : Mentions
+
+@enduml
