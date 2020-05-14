@@ -19,7 +19,7 @@ This capter contains functional and non-functional requirements for Kwetterprise
 \end{tereqdef}
 
 \begin{tereqdef}{F_TWEET_REALTIME}
-    An overview of real-time most recent tweets can be viewed.\pri{Must}
+    An overview of real-time most recent tweets can be viewed.\pri{Should}
 \end{tereqdef}
 
 \subsubsection{Replying}
@@ -41,11 +41,11 @@ This capter contains functional and non-functional requirements for Kwetterprise
 \subsection{Following}
 
 \begin{tereqdef}{F_FOLLOW}
-    A user can follow another user.\pri{Must}
+    A user can follow another user.\pri{Should}
 \end{tereqdef}
 
 \begin{tereqdef}{F_FOLLOW_DASH}
-    A user can view a dashboard with recent tweets by followed users.\pri{Must}
+    A user can view a dashboard with recent tweets by followed users.\pri{Should}
 \end{tereqdef}
 
 \subsection{Users \& roles}
@@ -74,8 +74,33 @@ This capter contains functional and non-functional requirements for Kwetterprise
     An administrator can change the role of a user.\pri{Should}
 \end{tereqdef}
 
-\section{Non-functional requirements}
+\section{\NEW{Non-functional requirements}}
+
+\subsection{Tweeting}
+\begin{tereqdef}{NF_TWEET_POST}
+    The system must be able to handle 100 tweets per second.\pri{Should}
+\end{tereqdef}
+
+\begin{tereqdef}{NF_TWEET_POST_TIME}
+    A tweet must be posted within 500 miliseconds.\pri{Should}    
+\end{tereqdef}
+
+\begin{tereqdef}{NF_TWEET_GET}
+    The system must be able to handle to load a user's tweets 100 times per second.\pri{Should}
+\end{tereqdef}
+
+\begin{tereqdef}{NF_TWEET_REALTIME}
+    A minimum of 500 real-time connections must be possible.\pri{Could}
+\end{tereqdef}
+
+\subsection{Reacting}
+
+\begin{tereqdef}{NF_REACT_TIME}
+    A reaction must be posted within 500 miliseconds.\pri{Should}
+\end{tereqdef}
+
+\subsection{API gateway}
 
 \begin{tereqdef}{APIG_REQ}
-    The API gateway must be able to handle 500 requests per minute.\pri{Should}
+    The API gateway must be able to handle 500 requests per second.\pri{Should}
 \end{tereqdef}
